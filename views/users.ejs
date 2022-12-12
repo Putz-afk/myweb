@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Users</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div class="p-4 mx-auto bg-gray-400">
+        <div class="px-4 py-3 w-full overflow-hidden shadow-xs bg-white rounded">
+            <!-- header -->
+            <div class="pb-1 flex place-content-between">
+                <div class="m-2"><span class="text-xl">Daftar Nama Mahasiswa</span></div>
+                <div class="my-auto">
+                    <a href="/users/add-form">
+                        <button
+                            class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md hover:bg-purple-700"
+                            type="submit">Tambah Baru</button>
+                    </a>
+                </div>
+            </div>
+            <!-- body -->
+            <div class="w-full overflox-x-auto ">
+                <table class="w-full whitespace-no-wrap">
+                    <thead>
+                        <tr class="text-xs font-semibold tracking-wide text-gray-500 uppercase border-b">
+                            <th class="px-4 py-3">No.</th>
+                            <th class="px-4 py-3">NIM</th>
+                            <th class="px-4 py-3">Nama</th>
+                            <th class="px-4 py-3">Kelas</th>
+                            <th class="px-4 py-3">Gender</th>
+                            <th class="px-4 py-3">Edit</th>
+                            <th class="px-4 py-3">Hapus</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y">
+                        <% for (var i=0; i < daftar_mhs.length; i++) {%>
+                            <tr class="text-gray-700">
+                                <td class="px-4 py-3 text-center">
+                                    <%= i+1 %>
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <%= daftar_mhs[i].nim %>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <%= daftar_mhs[i].nama %>
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <%= daftar_mhs[i].kelas %>
+                                </td>
+                                <td class="px-4 py-3 text-center">
+                                    <%= daftar_mhs[i].gender %>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="/users/edit-form/<%= daftar_mhs[i].nim%>"> <img class="block mx-auto stroke-purple-600" src="/images/edit.svg"
+                                                alt="edit"> </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="/users/remove/<%= daftar_mhs[i].nim%>"> <img class="block mx-auto stroke-purple-600" src="/images/remove.png"
+                                                alt="edit"> </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

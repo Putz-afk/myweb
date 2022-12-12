@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Adding New User</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="p-4 mx-auto bg-gray-400">
+        <div class="px-4 py-3 w-full overflow-hidden shadow-xs bg-white rounded">
+            <div class="bg-white w-full rounded px-4 flex-col ">
+                <!-- header -->
+                <div class="m-2 flex align-center justify-center"><span class="text-xl">Menambah User Baru</span></div>
+                <!-- body -->
+                <form action="/users/add" method="post">
+                    <div><label class="p-2">Nama</label>
+                        <input class="p-2 m-2" type="text" name="nama" placeholder="Nama...">
+                    </div>
+                    <div><label class="p-2">NIM</label>
+                        <input class="p-2 m-2" type="text" name="nim" placeholder="NIM...">
+                    </div>
+                    <div><label class="p-2">Kelas</label>
+                        <select class="p-2 m-2" name="kelas">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+                    <div><label class="p-2">Gender</label>
+                        <select class="p-2 m-2" name="gender">
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div><a href="/users">
+                            <button
+                                class="px-3 py-1 m-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md hover:bg-purple-700"
+                                type="submit" value="add">Submit Data</button>
+                        </a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
